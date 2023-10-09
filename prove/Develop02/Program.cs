@@ -4,21 +4,60 @@ using System.Collections.Generic;
 
 class Program
 {
-    static List<string> prompts = new List<string>
-    {
-        "Who was the most interesting person I interacted with today?",
-        "What was the best part of my day?",
-        "How did I see the hand of the Lord in my life today?",
-        "What was the strongest emotion I felt today?",
-        "If I had one thing I could do over today, what would it be?"
-    };
-
     static Dictionary<string, List<string>> categorizedPrompts = new Dictionary<string, List<string>>
     {
-        {"Self-reflection", new List<string> { "How do I feel today?", "What did I learn about myself?" }},
-        {"Future goals", new List<string> { "Where do I see myself in 5 years?", "What's a goal I want to achieve next month?" }},
-        {"Past experiences", new List<string> { "What's a childhood memory that stands out?", "Describe a past event that changed your life." }},
-        {"Dreams", new List<string> { "Describe a recent dream you had.", "What's a recurring dream theme for you?" }}
+        {"Self-reflection", new List<string> 
+            { 
+                "How do I feel today?",
+                "What did I learn about myself?",
+                "What was the best part of my day?",
+                "How did I see the hand of the Lord in my life today?",
+                "What was the strongest emotion I felt today?",
+                "What's one thing I learned about myself recently?",
+                "Did I act according to my values today?",
+                "What's one thing I could improve about myself?",
+                "What are three things I'm grateful for today?",
+                "How do I handle stress and what can I do better?"
+            }},
+        {"Future goals", new List<string> 
+            {
+                "Where do I see myself in 5 years?",
+                "What's a goal I want to achieve next month?",
+                "What's a skill I want to learn this year?",
+                "Where would I like to travel next?",
+                "What's a personal milestone I'd like to reach?",
+                "How do I plan on achieving my biggest dream?",
+                "What steps can I take to be closer to my goals?",
+                "What obstacles might stand in my way and how can I overcome them?",
+                "Which book do I plan on reading next and why?",
+                "What habits do I want to cultivate in the upcoming months?"
+            }},
+        {"Past experiences", new List<string> 
+            {
+                "What's a childhood memory that stands out?",
+                "Describe a past event that changed your life.",
+                "Who was the most interesting person I interacted with today?",
+                "If I had one thing I could do over today, what would it be?",
+                "What's a lesson I learned from a past mistake?",
+                "Describe a time I felt most alive.",
+                "Talk about a trip that had a significant impact on me.",
+                "Who from my past has had the greatest impact on my life?",
+                "Describe a memory from school that still sticks with me.",
+                "What was my most memorable birthday and why?"
+            }},
+        {"Dreams", new List<string> 
+            {
+                "Describe a recent dream you had.",
+                "What's a recurring dream theme for you?",
+                "Have I ever had a dream that came true?",
+                "Describe the strangest dream I can remember.",
+                "Do I often remember my dreams?",
+                "Have dreams ever influenced my decisions?",
+                "Do I believe dreams have meaning or are they random?",
+                "What's a dream destination I've always wanted to visit?",
+                "Describe a recurring character or element in my dreams.",
+                "If I could choose what to dream about tonight, what would it be?"
+            }}
     };
 
     static void Main(string[] args)
