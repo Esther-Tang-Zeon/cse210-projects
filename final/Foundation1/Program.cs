@@ -1,31 +1,59 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
+        // Creating videos
         Video video1 = new Video("Monopoly", "Khan Sir", 100);
         Video video2 = new Video("Perfect Competition", "Tang Sir", 500);
         Video video3 = new Video("Monopolistic Competition", "Wong Sir", 700);
 
-        Comment comment1 = new Comment("tang1", "Nice video!");
-        Comment comment2 = new Comment("tang2", "Awesome video!");
-        Comment comment3 = new Comment("tang3", "Cool video!");
+        // User interaction loop
+        bool exitProgram = false;
+        while (!exitProgram)
+        {
+            Console.WriteLine("Choose a video to comment on:");
+            Console.WriteLine("1. Monopoly");
+            Console.WriteLine("2. Perfect Competition");
+            Console.WriteLine("3. Monopolistic Competition");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice (1-4): ");
+            string choice = Console.ReadLine();
 
-        video1.AddComment(comment1);
-        video1.AddComment(comment2);
-        video1.AddComment(comment3);
+            switch (choice)
+            {
+                case "1":
+                    AddCommentToVideo(video1);
+                    break;
+                case "2":
+                    AddCommentToVideo(video2);
+                    break;
+                case "3":
+                    AddCommentToVideo(video3);
+                    break;
+                case "4":
+                    exitProgram = true;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option, please try again.");
+                    break;
+            }
+        }
+    }
 
-        video2.AddComment(comment1);
-        video2.AddComment(comment2);
-        video2.AddComment(comment3);
+    private static void AddCommentToVideo(Video video)
+    {
+        Console.Write("Enter your comment: ");
+        string commentText = Console.ReadLine();
+        Console.Write("Enter your name: ");
+        string commenterName = Console.ReadLine();
 
-        video3.AddComment(comment1);
-        video3.AddComment(comment2);
-        video3.AddComment(comment3);
+        Comment newComment = new Comment(commenterName, commentText);
+        video.AddComment(newComment);
 
-        video1.DisplayVideoInfo();
-        video2.DisplayVideoInfo();
-        video3.DisplayVideoInfo();
+        Console.WriteLine("Comment added successfully!");
+        video.DisplayVideoInfo();
     }
 }
